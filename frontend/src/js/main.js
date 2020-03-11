@@ -4,7 +4,7 @@ import Homepage from './components/Homepage';
 import ViewArtists from './components/ViewArtists';
 import ViewAlbums from './components/ViewAlbums';
 
-pageBuild()
+export default pageBuild
 
 function pageBuild(){
     header()
