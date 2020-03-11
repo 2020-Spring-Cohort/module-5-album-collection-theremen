@@ -10,20 +10,22 @@ namespace album_collection.Models
     {
         public string Title { get; set; }
         public string Image { get; set; }
-        public string Songs { get; set; }
         public string RecordLabel { get; set; }
+
+        public virtual Songs Songs { get; set; }
+        public virtual string SongTitle { get; set; }
+
 
         public Album()
         {
         }
 
-        public Album(string title, string image, string songs, string recordLabel)
+        public Album(string title, string image, string recordLabel, string songTitle)
         {
             Title = title;
             Image = image;
-            Songs = songs;
             RecordLabel = recordLabel;
-
+            SongTitle = songTitle;
         }
     }
 

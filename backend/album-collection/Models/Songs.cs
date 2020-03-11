@@ -7,7 +7,7 @@ namespace album_collection.Models
 {
     public class Songs
     {
-        public string Title { get; set; }
+        public string SongTitle { get; set; }
         public string Links { get; set; }
         public string Duration { get; set; }
 
@@ -15,12 +15,11 @@ namespace album_collection.Models
         {
         }
 
-        public Songs(string title, string links, string duration)
+        public Songs(string songTitle, string links, string duration)
         {
-            Title = title;
+            SongTitle = songTitle;
             Links = links;
             Duration = duration;
-
         }
     }
 }
