@@ -20,8 +20,9 @@ namespace album_collection.Models
         {
         }
 
-        public Artist(string name, string image, string albums, string hometown, string title)
+        public Artist(int id, string name, string image, string albums, string hometown, string title)
         {
+            ArtistId = id;
             Name = name;
             Image = image;
             Albums = albums;

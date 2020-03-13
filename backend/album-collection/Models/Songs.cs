@@ -16,8 +16,9 @@ namespace album_collection.Models
         {
         }
 
-        public Songs(string songTitle, string links, string duration)
+        public Songs(int id, string songTitle, string links, string duration)
         {
+            SongId = id;
             SongTitle = songTitle;
             Links = links;
             Duration = duration;

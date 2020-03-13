@@ -8,6 +8,7 @@ namespace album_collection.Models
 {
     public class Album
     {
+        public int AlbumId { get; set; }
         public string Title { get; set; }
         public string Image { get; set; }
         public string RecordLabel { get; set; }
@@ -20,14 +21,13 @@ namespace album_collection.Models
         {
         }
 
-        public Album(string title, string image, string recordLabel, string songTitle)
+        public Album(int id, string title, string image, string recordLabel, string songTitle)
         {
+            AlbumId = id;
             Title = title;
             Image = image;
             RecordLabel = recordLabel;
             SongTitle = songTitle;
         }
     }
-
-    
 }
