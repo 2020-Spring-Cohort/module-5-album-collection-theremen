@@ -10,7 +10,7 @@ function pageBuild(){
     header()
     homepage()
     footer()
-    ourMusic()
+    viewArtists()
     viewAlbums()
 }
 
@@ -25,14 +25,17 @@ function footer() {
 }
 
 function homepage() {
-    const homepageDescription = document.querySelector('#homepage-description')
-    homepageDescription.innerHTML = Homepage()
+    const homePageButton = document.querySelector('#home')
+    homePageButton.addEventListener('click', function(){
+        document.querySelector('#app').innerHTML = Homepage()
+    })
 }
 
-function ourMusic() {
+function viewArtists() {
     const ourMusic = document.querySelector('#our-music')
     ourMusic.addEventListener('click', function(){
-        document.querySelector('#view-artists').innerHTML = ViewArtists()
+        alert('Our Music clicked')
+        document.querySelector('#app').innerHTML = ViewArtists(artists)
     })
 }
 
