@@ -1,8 +1,11 @@
-export default function ViewArtists() {
+export default function ViewArtists(artists) {
     return `
     <ul id="view-artists">
-        <li class="artist">Artist 1</li>
-        <li class="artist">Artist 2</li>
+        ${artists.map(artist => {
+            return `
+            <li class="artist">${artist.Name}</li>
+            `
+        })}
     </ul>
     `
 }

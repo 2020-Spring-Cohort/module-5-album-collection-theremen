@@ -3,6 +3,7 @@ import Footer from './components/Footer';
 import Homepage from './components/Homepage';
 import ViewArtists from './components/ViewArtists';
 import ViewAlbums from './components/ViewAlbums';
+import AboutUs from './components/AboutUs';
 
 export default pageBuild
 
@@ -10,8 +11,9 @@ function pageBuild(){
     header()
     homepage()
     footer()
-    ourMusic()
+    viewArtists()
     viewAlbums()
+    aboutUs()
 }
 
 function header() {
@@ -25,14 +27,24 @@ function footer() {
 }
 
 function homepage() {
-    const homepageDescription = document.querySelector('#homepage-description')
-    homepageDescription.innerHTML = Homepage()
+    const homePageButton = document.querySelector('#home')
+    homePageButton.addEventListener('click', function(){
+        document.querySelector('#app').innerHTML = Homepage()
+    })
 }
 
-function ourMusic() {
+function viewArtists() {
     const ourMusic = document.querySelector('#our-music')
     ourMusic.addEventListener('click', function(){
-        document.querySelector('#view-artists').innerHTML = ViewArtists()
+        alert('Our Music clicked')
+        document.querySelector('#app').innerHTML = ViewArtists(artists)
+    })
+}
+
+function aboutUs() {
+    const aboutUs = document.querySelector('#about-us')
+    aboutUs.addEventListener('click', function(){
+        document.querySelector('#app').innerHTML = AboutUs()
     })
 }
 
