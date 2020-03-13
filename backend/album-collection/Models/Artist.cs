@@ -7,6 +7,7 @@ namespace album_collection.Models
 {
     public class Artist
     {
+        public int ArtistId { get; set; }
         public string Name { get; set; }
         public string Image { get; set; }
         public string Albums { get; set; }
