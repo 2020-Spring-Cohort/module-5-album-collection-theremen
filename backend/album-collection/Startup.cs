@@ -31,6 +31,18 @@ namespace album_collection
         {
             services.AddDbContext<AlbumCollectionContext>(opt =>
             services.AddControllers());
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                builder =>
+                {
+                    builder.WithOrigins("http://localhost:8080",
+                                        "https://localhost:8080")
+                                        .AllowAnyHeader()
+                                        .AllowAnyMethod();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,7 +57,7 @@ namespace album_collection
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
