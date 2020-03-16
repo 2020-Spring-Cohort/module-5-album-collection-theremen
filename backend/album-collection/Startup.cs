@@ -30,12 +30,12 @@ namespace album_collection
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AlbumCollectionContext>(opt =>
-            services.AddControllers());
+            services.AddDbContext<AlbumCollectionContext>();
+            services.AddControllers();
             services.AddMvc();
-            services.AddScoped<IRepository<Album>, AlbumRepository>();
+            //services.AddScoped<IRepository<Album>, AlbumRepository>();
             services.AddScoped<IRepository<Artist>, ArtistRepository>();
-            services.AddScoped<IRepository<Songs>, SongsRepository>();
+            //services.AddScoped<IRepository<Songs>, SongsRepository>();
 
             services.AddCors(options =>
             {
