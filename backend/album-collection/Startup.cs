@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using album_collection.Models;
+using album_collection.Repositories;
 
 namespace album_collection
 {
@@ -31,6 +32,10 @@ namespace album_collection
         {
             services.AddDbContext<AlbumCollectionContext>(opt =>
             services.AddControllers());
+            services.AddMvc();
+            services.AddScoped<IRepository<Album>, AlbumRepository>();
+            services.AddScoped<IRepository<Artist>, ArtistRepository>();
+            services.AddScoped<IRepository<Songs>, SongsRepository>();
 
             services.AddCors(options =>
             {
@@ -57,7 +62,7 @@ namespace album_collection
 
             app.UseRouting();
 
-            //app.UseAuthorization();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
