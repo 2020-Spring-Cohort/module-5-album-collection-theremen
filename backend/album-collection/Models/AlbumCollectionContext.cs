@@ -10,6 +10,8 @@ namespace album_collection.Models
 {
     public class AlbumCollectionContext : DbContext
     {
+        private ModelBuilder modelBuilder;
+        
         public AlbumCollectionContext(DbContextOptions<AlbumCollectionContext> options) : base(options)
         {
         }
@@ -22,6 +24,26 @@ namespace album_collection.Models
             optionsBuilder.UseSqlServer(connectionString)
                 .UseLazyLoadingProxies();
             base.OnConfiguring(optionsBuilder);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Artist>().HasData(
+                new Artist
+                {
+                    ArtistId = 1,
+                    Name = "Mumford & Sons",
+                    Image = "mumfordsons.jpg",
+                    Hometown = "London, UK",
+                },
+                new Artist
+                {
+                    ArtistId = 2,
+                    Name = "Lacuna Coil",
+                    Image = "lacunacoil.jpg",
+                    Hometown = "Milan, Italy",
+                }
+            );
         }
     }
     
