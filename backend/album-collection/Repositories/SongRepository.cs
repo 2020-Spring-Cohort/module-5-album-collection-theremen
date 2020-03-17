@@ -6,9 +6,9 @@ using album_collection.Models;
 
 namespace album_collection.Repositories
 {
-    public class SongsRepository : Repository<Songs>
+    public class SongRepository : Repository<Song>
     {
-        public SongsRepository(AlbumCollectionContext context) : base(context)
+        public SongRepository(AlbumCollectionContext context) : base(context)
         {
 
         }
