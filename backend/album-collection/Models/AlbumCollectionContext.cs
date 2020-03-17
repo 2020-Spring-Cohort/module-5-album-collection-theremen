@@ -10,7 +10,7 @@ namespace album_collection.Models
 {
     public class AlbumCollectionContext : DbContext
     {
-        private ModelBuilder modelBuilder;
+        //private ModelBuilder modelBuilder;
         
         public AlbumCollectionContext(DbContextOptions<AlbumCollectionContext> options) : base(options)
         {
@@ -44,6 +44,7 @@ namespace album_collection.Models
                     Hometown = "Milan, Italy",
                 }
             );
+            base.OnModelCreating(modelBuilder);
         }
     }
     

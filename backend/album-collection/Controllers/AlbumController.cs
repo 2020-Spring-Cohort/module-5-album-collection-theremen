@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using album_collection.Models;
+using album_collection.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,11 +13,18 @@ namespace album_collection.Controllers
     [ApiController]
     public class AlbumController : ControllerBase
     {
+        IRepository<Album> albumRepo;
+
+        public AlbumController(IRepository<Album> albumRepo)
+        {
+            this.albumRepo = albumRepo;
+        }
+
         // GET: api/Album
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Album> Get()
         {
-            return new string[] { "value1", "value2" };
+            return albumRepo.GetAll();
         }
 
         // GET: api/Album/5
