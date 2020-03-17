@@ -9,7 +9,7 @@ namespace album_collection.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SongsController : ControllerBase
+    public class SongController : ControllerBase
     {
         // GET: api/Songs
         [HttpGet]
@@ -19,7 +19,7 @@ namespace album_collection.Controllers
         }
 
         // GET: api/Songs/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
