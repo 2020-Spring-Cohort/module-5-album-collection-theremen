@@ -39,10 +39,10 @@ function viewArtists() {
     const app = document.querySelector('#app');
     const ourMusic = document.querySelector('#our-music')
     ourMusic.addEventListener('click', function(){
-        apiActions.getRequest("https://localhost:44393/api/todos",
-        todos => {
-            console.log(todos);
-            app.innerHTML = ViewArtists(artist);
+        apiActions.getRequest("https://localhost:44313/api/Artist",
+        artists => {
+            console.log(artists);
+            app.innerHTML = ViewArtists(artists);
         }
         )
     })
