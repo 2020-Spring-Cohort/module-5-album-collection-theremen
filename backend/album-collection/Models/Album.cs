@@ -12,8 +12,7 @@ namespace album_collection.Models
         public string Title { get; set; }
         public string Image { get; set; }
         public string RecordLabel { get; set; }
-
-        public virtual Song Song { get; set; }
+        public virtual Song Songs { get; set; }
         public virtual string SongTitle { get; set; }
 
 
