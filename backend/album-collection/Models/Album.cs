@@ -12,21 +12,23 @@ namespace album_collection.Models
         public string Title { get; set; }
         public string Image { get; set; }
         public string RecordLabel { get; set; }
-        public virtual Song Songs { get; set; }
-        public virtual string SongTitle { get; set; }
+        //public virtual Song Songs { get; set; }
+        //public virtual string SongTitle { get; set; }
 
+        public virtual Artist Artist { get; set; }
+        public virtual int ArtistId { get; set; }
 
         public Album()
         {
         }
 
-        public Album(int id, string title, string image, string recordLabel, string songTitle)
+        public Album(int id, string title, string image, string recordLabel)
         {
             AlbumId = id;
             Title = title;
             Image = image;
             RecordLabel = recordLabel;
-            SongTitle = songTitle;
+            //SongTitle = songTitle;
         }
     }
 }

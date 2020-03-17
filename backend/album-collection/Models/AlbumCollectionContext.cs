@@ -51,6 +51,7 @@ namespace album_collection.Models
                     Title = "Sigh No More",
                     Image = "sighnomore.jpg",
                     RecordLabel = "Island Records",
+                    ArtistId = 1
                 },
                 new Album
                 {
@@ -58,6 +59,7 @@ namespace album_collection.Models
                     Title = "Babel",
                     Image = "babel.jpg",
                     RecordLabel = "Island Records",
+                    ArtistId = 1
                 },
                 new Album
                 {
@@ -65,6 +67,7 @@ namespace album_collection.Models
                     Title = "Unleashed Memories",
                     Image = "unleashedmemories.jpg",
                     RecordLabel = "Century Media",
+                    ArtistId = 2
                 },
                 new Album
                 {
@@ -72,6 +75,7 @@ namespace album_collection.Models
                     Title = "Comalies",
                     Image = "comalies.jpg",
                     RecordLabel = "Century Media",
+                    ArtistId = 2
                 }
             );
             base.OnModelCreating(modelBuilder);

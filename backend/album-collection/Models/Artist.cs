@@ -12,8 +12,9 @@ namespace album_collection.Models
         public string Image { get; set; }
         public string Hometown { get; set; }
 
-        public virtual Album Album { get; set; }
         public virtual string Title { get; set; }
+
+        public virtual ICollection<Album> Albums { get; set; }
 
         public Artist()
         {
