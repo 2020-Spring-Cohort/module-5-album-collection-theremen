@@ -44,6 +44,36 @@ namespace album_collection.Models
                     Hometown = "Milan, Italy",
                 }
             );
+            modelBuilder.Entity<Album>().HasData(
+                new Album
+                {
+                    AlbumId = 1,
+                    Title = "Sigh No More",
+                    Image = "sighnomore.jpg",
+                    RecordLabel = "Island Records",
+                },
+                new Album
+                {
+                    AlbumId = 2,
+                    Title = "Babel",
+                    Image = "babel.jpg",
+                    RecordLabel = "Island Records",
+                },
+                new Album
+                {
+                    AlbumId = 3,
+                    Title = "Unleashed Memories",
+                    Image = "unleashedmemories.jpg",
+                    RecordLabel = "Century Media",
+                },
+                new Album
+                {
+                    AlbumId = 4,
+                    Title = "Comalies",
+                    Image = "comalies.jpg",
+                    RecordLabel = "Century Media",
+                }
+            );
             base.OnModelCreating(modelBuilder);
         }
     }
