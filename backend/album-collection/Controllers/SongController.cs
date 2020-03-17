@@ -11,27 +11,35 @@ namespace album_collection.Controllers
     [ApiController]
     public class SongController : ControllerBase
     {
+
         // GET: api/Song
+
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
+
         // GET: api/Song/5
+
         [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
         }
 
+
         // POST: api/Song
+
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
+
         // PUT: api/Song/5
+
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {

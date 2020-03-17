@@ -4,6 +4,8 @@ import Homepage from './components/Homepage';
 import ViewArtists from './components/ViewArtists';
 import ViewAlbums from './components/ViewAlbums';
 import AboutUs from './components/AboutUs';
+import apiActions from './api/apiActions';
+
 
 export default pageBuild
 
@@ -34,10 +36,15 @@ function homepage() {
 }
 
 function viewArtists() {
+    const app = document.querySelector('#app');
     const ourMusic = document.querySelector('#our-music')
     ourMusic.addEventListener('click', function(){
-        alert('Our Music clicked')
-        document.querySelector('#app').innerHTML = ViewArtists(artists)
+        apiActions.getRequest("https://localhost:44393/api/todos",
+        todos => {
+            console.log(todos);
+            app.innerHTML = ViewArtists(artist);
+        }
+        )
     })
 }
 

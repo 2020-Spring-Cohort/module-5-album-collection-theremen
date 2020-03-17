@@ -10,7 +10,6 @@ namespace album_collection.Models
         public int ArtistId { get; set; }
         public string Name { get; set; }
         public string Image { get; set; }
-        public string Albums { get; set; }
         public string Hometown { get; set; }
 
         public virtual Album Album { get; set; }
@@ -20,12 +19,11 @@ namespace album_collection.Models
         {
         }
 
-        public Artist(int id, string name, string image, string albums, string hometown, string title)
+        public Artist(int id, string name, string image, string hometown, string title)
         {
             ArtistId = id;
             Name = name;
             Image = image;
-            Albums = albums;
             Hometown = hometown;
             Title = title;
         }

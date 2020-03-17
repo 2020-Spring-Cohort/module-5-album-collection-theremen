@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using album_collection.Models;
+using album_collection.Repositories;
 
 namespace album_collection
 {
@@ -29,8 +30,24 @@ namespace album_collection
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AlbumCollectionContext>(opt =>
-            services.AddControllers());
+            services.AddDbContext<AlbumCollectionContext>();
+            services.AddControllers();
+            services.AddMvc();
+            //services.AddScoped<IRepository<Album>, AlbumRepository>();
+            services.AddScoped<IRepository<Artist>, ArtistRepository>();
+            //services.AddScoped<IRepository<Songs>, SongsRepository>();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                builder =>
+                {
+                    builder.WithOrigins("http://localhost:8080",
+                                        "https://localhost:8080")
+                                        .AllowAnyHeader()
+                                        .AllowAnyMethod();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
