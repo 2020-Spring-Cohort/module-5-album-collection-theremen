@@ -33,7 +33,7 @@ namespace album_collection
             services.AddDbContext<AlbumCollectionContext>();
             services.AddControllers();
             services.AddMvc();
-            //services.AddScoped<IRepository<Album>, AlbumRepository>();
+            services.AddScoped<IRepository<Album>, AlbumRepository>();
             services.AddScoped<IRepository<Artist>, ArtistRepository>();
             //services.AddScoped<IRepository<Songs>, SongsRepository>();
 
@@ -57,6 +57,8 @@ namespace album_collection
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseHttpsRedirection();
 
