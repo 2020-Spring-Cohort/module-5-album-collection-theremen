@@ -12,20 +12,18 @@ namespace album_collection.Models
         public string Image { get; set; }
         public string Hometown { get; set; }
 
-        public virtual Album Album { get; set; }
-        public virtual string Title { get; set; }
+        public virtual ICollection<Album> Albums { get; set; }
 
         public Artist()
         {
         }
 
-        public Artist(int id, string name, string image, string hometown, string title)
+        public Artist(int id, string name, string image, string hometown)
         {
             ArtistId = id;
             Name = name;
             Image = image;
             Hometown = hometown;
-            Title = title;
         }
     }
 }

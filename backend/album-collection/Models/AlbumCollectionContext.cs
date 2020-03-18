@@ -10,7 +10,7 @@ namespace album_collection.Models
 {
     public class AlbumCollectionContext : DbContext
     {
-        private ModelBuilder modelBuilder;
+        //private ModelBuilder modelBuilder;
         
         public AlbumCollectionContext(DbContextOptions<AlbumCollectionContext> options) : base(options)
         {
@@ -44,6 +44,41 @@ namespace album_collection.Models
                     Hometown = "Milan, Italy",
                 }
             );
+            modelBuilder.Entity<Album>().HasData(
+                new Album
+                {
+                    AlbumId = 1,
+                    Title = "Sigh No More",
+                    Image = "sighnomore.jpg",
+                    RecordLabel = "Island Records",
+                    ArtistId = 1
+                },
+                new Album
+                {
+                    AlbumId = 2,
+                    Title = "Babel",
+                    Image = "babel.jpg",
+                    RecordLabel = "Island Records",
+                    ArtistId = 1
+                },
+                new Album
+                {
+                    AlbumId = 3,
+                    Title = "Unleashed Memories",
+                    Image = "unleashedmemories.jpg",
+                    RecordLabel = "Century Media",
+                    ArtistId = 2
+                },
+                new Album
+                {
+                    AlbumId = 4,
+                    Title = "Comalies",
+                    Image = "comalies.jpg",
+                    RecordLabel = "Century Media",
+                    ArtistId = 2
+                }
+            );
+            base.OnModelCreating(modelBuilder);
         }
     }
     
