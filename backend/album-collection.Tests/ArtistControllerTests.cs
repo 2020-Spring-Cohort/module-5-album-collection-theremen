@@ -38,5 +38,28 @@ namespace album_collection.Tests
             Assert.Equal(2, countOfArtists);
 
         }
+
+        [Fact]
+
+        public void GetById_Should_Return_Chosen_Artist()
+        {
+            //arrange
+            var id = 2;
+            var firstArtist = new Artist(1, "Mumford & Sons", "mumfordandsons.jpg", "London");
+            var secondArtist = new Artist(2, "Test Artist", "testartist.jpg", "test");
+            var expectedArtists = new List<Artist>();
+            expectedArtists.Add(firstArtist);
+            expectedArtists.Add(secondArtist);
+
+            artistMockRepo.GetById(id).Returns(secondArtist);
+            //act
+
+            var result = testController.Get(id);
+
+            //assert
+
+            Assert.Equal(secondArtist, result);
+
+        }
     }
 }
