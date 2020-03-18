@@ -369,7 +369,7 @@ namespace album_collection.Models
                 new Song
                 {
                     SongId = 36,
-                    SongTitle = "Heaven's Lie",
+                    SongTitle = "Heaven's a Lie",
                     Links = "link.html",
                     Duration = "4:46",
                     AlbumId = 4
