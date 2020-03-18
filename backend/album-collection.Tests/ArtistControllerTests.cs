@@ -22,7 +22,10 @@ namespace album_collection.Tests
         public void Get_Returns_Count_Of_Artists()
         {
             // arrange
-            //List<string> artistList = new List<string>();
+            var expectedArtists = new List<Artist>()
+            {
+              new Artist(1, "Mumford & Sons", "mumfordandsons.jpg", "London")
+            };
             //artistList
 
             // act
