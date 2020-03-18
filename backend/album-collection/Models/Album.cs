@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace album_collection.Models
 {
@@ -15,6 +16,8 @@ namespace album_collection.Models
         //public virtual Song Songs { get; set; }
         //public virtual string SongTitle { get; set; }
 
+
+        [JsonIgnore]
         public virtual Artist Artist { get; set; }
         public virtual int ArtistId { get; set; }
 

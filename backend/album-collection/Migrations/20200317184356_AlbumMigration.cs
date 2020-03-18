@@ -26,9 +26,9 @@ namespace album_collection.Migrations
                 name: "AlbumId",
                 table: "Artists");
 
-            migrationBuilder.DropColumn(
-                name: "SongTitle",
-                table: "Albums");
+           // migrationBuilder.DropColumn(
+             //   name: "SongTitle",
+              //  table: "Albums");
 
             migrationBuilder.DropColumn(
                 name: "SongsSongId",
@@ -105,11 +105,11 @@ namespace album_collection.Migrations
                 type: "int",
                 nullable: true);
 
-            migrationBuilder.AddColumn<string>(
-                name: "SongTitle",
-                table: "Albums",
-                type: "nvarchar(max)",
-                nullable: true);
+            //migrationBuilder.AddColumn<string>(
+            //    name: "SongTitle",
+            //    table: "Albums",
+            //    type: "nvarchar(max)",
+            //    nullable: true);
 
             migrationBuilder.AddColumn<int>(
                 name: "SongsSongId",
