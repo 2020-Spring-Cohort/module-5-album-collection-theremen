@@ -16,6 +16,7 @@ namespace album_collection.Models
         //public virtual Song Songs { get; set; }
         //public virtual string SongTitle { get; set; }
 
+        public virtual ICollection<Song> Songs { get; set; }
 
         [JsonIgnore]
         public virtual Artist Artist { get; set; }
@@ -31,7 +32,6 @@ namespace album_collection.Models
             Title = title;
             Image = image;
             RecordLabel = recordLabel;
-            //SongTitle = songTitle;
         }
     }
 }
