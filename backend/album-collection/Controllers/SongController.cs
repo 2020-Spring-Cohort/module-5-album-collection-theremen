@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using album_collection.Repositories;
+using album_collection.Models;
 
 namespace album_collection.Controllers
 {
@@ -12,21 +14,26 @@ namespace album_collection.Controllers
     public class SongController : ControllerBase
     {
 
-        // GET: api/Song
-
-        [HttpGet]
-        public IEnumerable<string> Get()
+        IRepository<Song> songRepo;
+        
+        public SongController(IRepository<Song> songRepo)
         {
-            return new string[] { "value1", "value2" };
+            this.songRepo = songRepo;
+        }
+
+        // GET: api/Song
+        [HttpGet]
+        public IEnumerable<Song> Get()
+        {
+            return songRepo.GetAll();
         }
 
 
         // GET: api/Song/5
-
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Song Get(int id)
         {
-            return "value";
+            return songRepo.GetById(id);
         }
 
 

@@ -29,9 +29,9 @@ namespace album_collection.Controllers
 
         // GET: api/Album/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Album Get(int id)
         {
-            return "value";
+            return albumRepo.GetById(id);
         }
 
         // POST: api/Album
