@@ -12,7 +12,7 @@ namespace album_collection.Migrations
                 {
                     SongId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                  //  SongTitle = table.Column<string>(nullable: true),
+                    SongTitle = table.Column<string>(nullable: true),
                     Links = table.Column<string>(nullable: true),
                     Duration = table.Column<string>(nullable: true)
                 },
