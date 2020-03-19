@@ -38,10 +38,11 @@ namespace album_collection.Controllers
 
 
         // POST: api/Song
-
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IEnumerable<Song> Post([FromBody] Song value)
         {
+            songRepo.Create(value);
+            return songRepo.GetAll();
         }
 
 

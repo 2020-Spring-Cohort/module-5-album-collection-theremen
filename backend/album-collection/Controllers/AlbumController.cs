@@ -36,8 +36,10 @@ namespace album_collection.Controllers
 
         // POST: api/Album
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IEnumerable<Album> Post([FromBody] Album value)
         {
+            albumRepo.Create(value);
+            return albumRepo.GetAll();
         }
 
         // PUT: api/Album/5
