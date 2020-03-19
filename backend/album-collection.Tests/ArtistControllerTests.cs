@@ -61,5 +61,27 @@ namespace album_collection.Tests
             Assert.Equal(secondArtist, result);
 
         }
+
+        [Fact]
+        public void Post_Creates_New_Artist()
+        {
+            // arrange
+            var newArtist = new Artist(1, "Mumford & Sons", "mumfordandsons.jpg", "London");
+            var artistList = new List<Artist>();
+
+            // Use When..Do to substitute for methods that don't return a value, like the Repository method Create()
+            // When() allows us to call the method on the substitute and pass an argument
+            // Do() allows us to pass a callback function that executes when the method is called
+            artistMockRepo.When(t => t.Create(newArtist))
+                .Do(t => artistList.Add(newArtist));
+
+            artistMockRepo.GetAll().Returns(artistList);
+
+            // act
+            var result = testController.Post(newArtist);
+
+            // assert
+            Assert.Contains(newArtist, result);
+        }
     }
 }
