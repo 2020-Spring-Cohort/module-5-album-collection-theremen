@@ -43,8 +43,7 @@ function viewArtists() {
         artists => {
             console.log(artists);
             app.innerHTML = ViewArtists(artists);
-        }
-        )
+        })
     })
 }
 
