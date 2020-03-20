@@ -52,7 +52,6 @@ function viewArtists() {
         if(event.target.classList.contains('edit-artist__submit')){
             const artistId = event.target.parentElement.querySelector('.artist__id').value;
             console.log(artistId);
-
              /* apiActions.getRequest(
                 `https://localhost:44393/api/todos/${todoId}`,
                 toDoEdit => {
@@ -60,7 +59,6 @@ function viewArtists() {
                     app.innerHTML = TodoEdit(toDoEdit);
                   }
             ) */
-
         }
     })
 }

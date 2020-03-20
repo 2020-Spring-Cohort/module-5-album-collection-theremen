@@ -1,4 +1,5 @@
 export default function ViewArtists(artists) {
+    console.log(artists)
     return `
     <ul id="view-artists">
         ${artists.map(artist => {
@@ -8,7 +9,7 @@ export default function ViewArtists(artists) {
                 ${artist.hometown}
                 <button class="edit-artist__submit">Edit</button>
                 <button class="delete-artist__submit">Delete</button>
-                <input class="artist__id" type="hidden" value="${artist.id}">
+                <input class="artist__id" type="hidden" value="${artist.artistId}">
             </li>
             `
         }).join("")}
