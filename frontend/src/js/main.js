@@ -70,7 +70,7 @@ function viewArtists() {
             const artistHometown = event.target.parentElement.querySelector('.update-artist__hometown').value
 
             const artistData = {
-                id: artistId,
+                artistId: artistId,
                 name: artistName,
                 image: artistImage,
                 hometown: artistHometown
