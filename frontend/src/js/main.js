@@ -5,6 +5,8 @@ import ViewArtists from './components/ViewArtists';
 import ViewAlbums from './components/ViewAlbums';
 import AboutUs from './components/AboutUs';
 import apiActions from './api/apiActions';
+import EditArtist from './components/EditArtist';
+
 
 
 export default pageBuild
@@ -44,6 +46,22 @@ function viewArtists() {
             console.log(artists);
             app.innerHTML = ViewArtists(artists);
         })
+    })
+
+    app.addEventListener("click", function(){
+        if(event.target.classList.contains('edit-artist__submit')){
+            const artistId = event.target.parentElement.querySelector('.artist__id').value;
+            console.log(artistId);
+
+             /* apiActions.getRequest(
+                `https://localhost:44393/api/todos/${todoId}`,
+                toDoEdit => {
+                    console.log(toDoEdit);
+                    app.innerHTML = TodoEdit(toDoEdit);
+                  }
+            ) */
+
+        }
     })
 }
 

@@ -23,7 +23,16 @@ function deleteRequest(location, callback) {
 }
   
 function putRequest(location, requestBody, callback) {
-    // stay tuned
+    fetch(location, {
+        method: 'PUT',
+        body: JSON.stringify(requestBody),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+      .then(response => response.json())
+      .then(data => callback(data))
+      .catch(err => console.log(err))
 }
   
 export default {
