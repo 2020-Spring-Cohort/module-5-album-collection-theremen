@@ -47,6 +47,55 @@ function viewArtists() {
     })
 }
 
+function viewArtists() {
+    const app = document.querySelector('#app');
+    const ourMusic = document.querySelector('#our-music')
+    ourMusic.addEventListener('click', function(){
+        apiActions.getRequest("https://localhost:44313/api/Artist",
+        artists => {
+            console.log(artists);
+            app.innerHTML = ViewArtists(artists);
+        })
+    })
+    app.addEventListener('click', function(){
+        if(event.target.classList.contains('add-artist__submit')){
+            const artistName = event.target.parentElement.querySelector('.add-artist__artistName').value;
+            const artistImage = event.target.parentElement.querySelector('.add-artist__artistImage').value;
+            const artistHometown = event.target.parentElement.querySelector('.add-artist__artistHometown').value;
+
+            var requestBody = {
+                Name: artistName,
+                Image: artistImage,
+                Hometown: artistHometown
+            }
+            apiActions.postRequest(
+                "https://localhost:44313/api/Artist",
+                requestBody,
+                artists => {
+                    console.log("Artists returned from backend")
+                    console.log(artists);
+                    app.innerHTML = ViewArtists(artists)
+                }
+            )
+        }
+    })
+
+    app.addEventListener("click", function(){
+        if(event.target.classList.contains('delete-artist__submit')){
+            const artistId = event.target.parentElement.querySelector('.artist__id').value;
+            console.log(artistId);
+
+            apiActions.deleteRequest(
+                `https://localhost:44393/api/Artist/${artistId}`,
+                artists => {
+                    app.innerHTML = Artists(artists);
+                }
+            )
+        }
+    })
+
+}
+
 function aboutUs() {
     const aboutUs = document.querySelector('#about-us')
     aboutUs.addEventListener('click', function(){
