@@ -75,7 +75,7 @@ function viewArtists() {
             console.log(artistId);
 
             apiActions.deleteRequest(
-                `https://localhost:44393/api/Artist/${artistId}`,
+                `https://localhost:44313/api/Artist/${artistId}`,
                 artists => {
                     app.innerHTML = ViewArtists(artists);
                 }
@@ -89,7 +89,7 @@ function viewArtists() {
             console.log(albumId);
     
             apiActions.deleteRequest(
-                `https://localhost:44393/api/Album/${albumId}`,
+                `https://localhost:44313/api/Album/${albumId}`,
                 albums => {
                     app.innerHTML = ViewAlbums(albums);
                 }
@@ -103,7 +103,7 @@ function viewArtists() {
             console.log(songId);
     
             apiActions.deleteRequest(
-                `https://localhost:44393/api/Song/${songId}`,
+                `https://localhost:44313/api/Song/${songId}`,
                 songs => {
                     app.innerHTML = ViewSongs(songs);
                 }
