@@ -31,6 +31,7 @@ function footer() {
 function homepage() {
     const homePageButton = document.querySelector('#home')
     homePageButton.addEventListener('click', function(){
+        console.log('homepage')
         document.querySelector('#app').innerHTML = Homepage()
     })
 }
