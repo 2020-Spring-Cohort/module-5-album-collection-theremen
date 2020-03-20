@@ -45,8 +45,10 @@ namespace album_collection.Controllers
 
         // PUT: api/Artist/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IEnumerable<Artist> Put([FromBody] Artist artist)
         {
+            artistRepo.Update(artist);
+            return artistRepo.GetAll();
         }
 
         // DELETE: api/ApiWithActions/5
