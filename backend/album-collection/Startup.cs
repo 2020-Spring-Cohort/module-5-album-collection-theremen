@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using album_collection.Models;
 using album_collection.Repositories;
+using Newtonsoft.Json;
 
 namespace album_collection
 {
@@ -31,7 +32,10 @@ namespace album_collection
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AlbumCollectionContext>();
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(o =>
+            {
+                o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            });
             services.AddMvc();
             services.AddScoped<IRepository<Album>, AlbumRepository>();
             services.AddScoped<IRepository<Artist>, ArtistRepository>();

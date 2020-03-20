@@ -61,6 +61,31 @@ function viewArtists() {
             )
         }
     })
+
+    app.addEventListener('click', function(){
+        if(event.target.classList.contains('update-artist__submit')){
+            const artistId = event.target.parentElement.querySelector('.update-artist__id').value;
+            const artistName = event.target.parentElement.querySelector('.update-artist__name').value
+            const artistImage = event.target.parentElement.querySelector('.update-artist__image').value
+            const artistHometown = event.target.parentElement.querySelector('.update-artist__hometown').value
+
+            const artistData = {
+                id: artistId,
+                name: artistName,
+                image: artistImage,
+                hometown: artistHometown
+            };
+            console.log(artistData)
+
+            apiActions.putRequest(
+                `https://localhost:44313/api/Artist/${artistId}`,
+                artistData,
+                artists => {
+                    app.innerHTML = ViewArtists(artists);
+                }
+            )
+        }
+    })
 }
 
 function aboutUs() {
