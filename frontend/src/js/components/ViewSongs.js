@@ -13,5 +13,6 @@ export default function ViewSongs(album) {
             </li>
             `
         }).join("")}
-    </ul>`
+    </ul>
+    <button class="view-albums">Go Back</button>`
 }

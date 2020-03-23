@@ -13,5 +13,6 @@ export default function ViewAlbums(artist) {
             </li>
             `
         }).join("")}
-    </ul>`
+    </ul>
+    <button class="view-artists">Go Back</button>`
 }

@@ -176,6 +176,29 @@ function viewArtists() {
             )
         }
     })
+    app.addEventListener('click', function(){
+        if(event.target.classList.contains('view-artists')){
+            apiActions.getRequest(
+                `https://localhost:44313/api/Artist/`,
+                artists => {
+                    console.log(artists);
+                    app.innerHTML = ViewArtists(artists);
+                }
+            )
+        }
+    })
+    /* app.addEventListener('click', function(){
+        if(event.target.classList.contains('view-albums')){
+            const songId = event.target.parentElement.querySelector(".song__id").value
+            apiActions.getRequest(
+                `https://localhost:44313/api/Song/${songId}`,
+                songs => {
+                    console.log(songs);
+                    app.innerHTML = ViewAlbums(songs);
+                }
+            )
+        }
+    }) */
 }
 
 function aboutUs() {
