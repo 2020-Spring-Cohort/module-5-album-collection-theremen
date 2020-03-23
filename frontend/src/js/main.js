@@ -15,6 +15,7 @@ function pageBuild(){
     footer()
     viewArtists()
     viewAlbums()
+    viewSongs()
     aboutUs()
 }
 
@@ -69,6 +70,49 @@ function viewArtists() {
         }
     })
 
+
+    app.addEventListener("click", function(){
+        if(event.target.classList.contains('delete-artist__submit')){
+            const artistId = event.target.parentElement.querySelector('.artist__id').value;
+            console.log(artistId);
+
+            apiActions.deleteRequest(
+                `https://localhost:44313/api/Artist/${artistId}`,
+                artists => {
+                    app.innerHTML = ViewArtists(artists);
+                }
+            )
+        }
+    })
+
+    app.addEventListener("click", function(){
+        if(event.target.classList.contains('delete-album__submit')){
+            const albumId = event.target.parentElement.querySelector('.album__id').value;
+            console.log(albumId);
+    
+            apiActions.deleteRequest(
+                `https://localhost:44313/api/Album/${albumId}`,
+                albums => {
+                    app.innerHTML = ViewAlbums(albums);
+                }
+            )
+        }
+    })
+
+    app.addEventListener("click", function(){
+        if(event.target.classList.contains('delete-song__submit')){
+            const songId = event.target.parentElement.querySelector('.song__id').value;
+            console.log(songId);
+    
+            apiActions.deleteRequest(
+                `https://localhost:44313/api/Song/${songId}`,
+                songs => {
+                    app.innerHTML = ViewSongs(songs);
+                }
+            )
+        }
+    })
+
 }
 
 function aboutUs() {
@@ -82,6 +126,14 @@ function viewAlbums() {
     const artist = document.querySelectorAll('.artist').forEach(artist => {
         artist.addEventListener('click', function(){
             document.querySelector('#view-albums').innerHTML = ViewAlbums()
+        })
+    })
+}
+
+function viewSongs() {
+    const album = document.querySelectorAll('.album').forEach(album => {
+        album.addEventListener('click', function(){
+            document.querySelector('#view-songs').innerHTML = ViewSongs()
         })
     })
 }
