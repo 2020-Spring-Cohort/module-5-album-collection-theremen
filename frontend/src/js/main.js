@@ -70,7 +70,7 @@ function viewArtists() {
             const artistHometown = event.target.parentElement.querySelector('.update-artist__hometown').value
 
             const artistData = {
-                id: artistId,
+                artistId: artistId,
                 name: artistName,
                 image: artistImage,
                 hometown: artistHometown
@@ -82,6 +82,70 @@ function viewArtists() {
                 artistData,
                 artists => {
                     app.innerHTML = ViewArtists(artists);
+                }
+            )
+        }
+    })
+
+    app.addEventListener("click", function(){
+        if(event.target.classList.contains('delete-artist__submit')){
+            const artistId = event.target.parentElement.querySelector('.artist__id').value;
+            console.log(artistId);
+
+            apiActions.deleteRequest(
+                `https://localhost:44313/api/Artist/${artistId}`,
+                artists => {
+                    app.innerHTML = ViewArtists(artists);
+                }
+            )
+        }
+    })
+
+    app.addEventListener("click", function(){
+        if(event.target.classList.contains('delete-album__submit')){
+            const albumId = event.target.parentElement.querySelector('.album__id').value;
+            console.log(albumId);
+    
+            apiActions.deleteRequest(
+                `https://localhost:44313/api/Album/${albumId}`,
+                albums => {
+                    app.innerHTML = ViewAlbums(albums);
+                }
+            )
+        }
+    })
+
+    app.addEventListener("click", function(){
+        if(event.target.classList.contains('delete-song__submit')){
+            const songId = event.target.parentElement.querySelector('.song__id').value;
+            console.log(songId);
+    
+            apiActions.deleteRequest(
+                `https://localhost:44313/api/Song/${songId}`,
+                songs => {
+                    app.innerHTML = ViewSongs(songs);
+                }
+            )
+        }
+    })
+
+    app.addEventListener('click', function(){
+        if(event.target.classList.contains('add-artist__submit')){
+            const artistName = event.target.parentElement.querySelector('.add-artist__artistName').value;
+            const artistImage = event.target.parentElement.querySelector('.add-artist__artistImage').value;
+            const artistHometown = event.target.parentElement.querySelector('.add-artist__artistHometown').value;
+            var requestBody = {
+                Name: artistName,
+                Image: artistImage,
+                Hometown: artistHometown
+            }
+            apiActions.postRequest(
+                "https://localhost:44313/api/Artist",
+                requestBody,
+                artists => {
+                    console.log("Artists returned from backend")
+                    console.log(artists);
+                    app.innerHTML = ViewArtists(artists)
                 }
             )
         }
