@@ -1,4 +1,5 @@
 export default function ViewArtists(artists) {
+    console.log(artists)
     return `
     <ul id="view-artists">
         ${artists.map(artist => {

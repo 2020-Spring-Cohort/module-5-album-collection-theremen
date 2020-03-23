@@ -5,6 +5,8 @@ import ViewArtists from './components/ViewArtists';
 import ViewAlbums from './components/ViewAlbums';
 import AboutUs from './components/AboutUs';
 import apiActions from './api/apiActions';
+import EditArtist from './components/EditArtist';
+
 
 
 export default pageBuild
@@ -47,6 +49,19 @@ function viewArtists() {
             app.innerHTML = ViewArtists(artists);
         })
     })
+
+
+    app.addEventListener("click", function(){
+        if(event.target.classList.contains('edit-artist__submit')){
+            const artistId = event.target.parentElement.querySelector('.artist__id').value;
+            console.log(artistId);
+            apiActions.getRequest(
+                `https://localhost:44313/api/Artist/${artistId}`,
+                artistEdit => {
+                    console.log(artistEdit);
+                    app.innerHTML = EditArtist(artistEdit);
+                  }
+
     app.addEventListener('click', function(){
         if(event.target.classList.contains('add-artist__submit')){
             const artistName = event.target.parentElement.querySelector('.add-artist__artistName').value;
@@ -66,9 +81,30 @@ function viewArtists() {
                     console.log(artists);
                     app.innerHTML = ViewArtists(artists)
                 }
+
             )
         }
     })
+
+
+    app.addEventListener('click', function(){
+        if(event.target.classList.contains('update-artist__submit')){
+            const artistId = event.target.parentElement.querySelector('.update-artist__id').value;
+            const artistName = event.target.parentElement.querySelector('.update-artist__name').value
+            const artistImage = event.target.parentElement.querySelector('.update-artist__image').value
+            const artistHometown = event.target.parentElement.querySelector('.update-artist__hometown').value
+
+            const artistData = {
+                artistId: artistId,
+                name: artistName,
+                image: artistImage,
+                hometown: artistHometown
+            };
+            console.log(artistData)
+
+            apiActions.putRequest(
+                `https://localhost:44313/api/Artist/${artistId}`,
+                artistData,
 
 
     app.addEventListener("click", function(){
@@ -78,12 +114,14 @@ function viewArtists() {
 
             apiActions.deleteRequest(
                 `https://localhost:44313/api/Artist/${artistId}`,
+
                 artists => {
                     app.innerHTML = ViewArtists(artists);
                 }
             )
         }
     })
+
 
     app.addEventListener("click", function(){
         if(event.target.classList.contains('delete-album__submit')){
@@ -112,6 +150,7 @@ function viewArtists() {
             )
         }
     })
+
 
 }
 
