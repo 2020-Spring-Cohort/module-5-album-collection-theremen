@@ -19,7 +19,15 @@ function postRequest(location, requestBody, callback) {
 }
   
 function deleteRequest(location, callback) {
-    // stay tuned
+    fetch(location, {
+        method: 'DELETE',
+        headers: {
+          "Content-Type": "application/json"
+        }
+    })
+    .then(response => response.json())
+    .then(data => callback(data))
+    .catch(err => console.log(err))
 }
   
 function putRequest(location, requestBody, callback) {
