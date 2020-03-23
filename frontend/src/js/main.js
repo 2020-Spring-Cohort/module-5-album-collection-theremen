@@ -32,6 +32,7 @@ function footer() {
 function homepage() {
     const homePageButton = document.querySelector('#home')
     homePageButton.addEventListener('click', function(){
+        console.log('homepage')
         document.querySelector('#app').innerHTML = Homepage()
     })
 }
@@ -68,6 +69,7 @@ function viewArtists() {
             )
         }
     })
+
 
     app.addEventListener("click", function(){
         if(event.target.classList.contains('delete-artist__submit')){
@@ -110,6 +112,7 @@ function viewArtists() {
             )
         }
     })
+
 }
 
 function aboutUs() {
