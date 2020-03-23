@@ -4,7 +4,8 @@ export default function ViewArtists(artists) {
     <ul id="view-artists">
         ${artists.map(artist => {
             return `
-            <li class="artist">${artist.name}
+            <li class="artist">
+                <div class="artist__name">${artist.name}</div>
                 ${artist.image}
                 ${artist.hometown}
                 <button class="edit-artist__submit">Edit</button>

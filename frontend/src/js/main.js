@@ -150,6 +150,19 @@ function viewArtists() {
             )
         }
     })
+    app.addEventListener('click', function(){
+        if(event.target.classList.contains('artist__name')){
+            const artistId = event.target.parentElement.querySelector(".artist__id").value
+            console.log(artistId)
+            apiActions.getRequest(
+                `https://localhost:44313/api/Artist/${artistId}`,
+                artist => {
+                    console.log(artist);
+                    app.innerHTML = ViewAlbums(artist);
+                  }
+            )
+        }
+    })
 }
 
 function aboutUs() {
@@ -160,9 +173,11 @@ function aboutUs() {
 }
 
 function viewAlbums() {
-    const artist = document.querySelectorAll('.artist').forEach(artist => {
-        artist.addEventListener('click', function(){
-            document.querySelector('#view-albums').innerHTML = ViewAlbums()
+    ourMusic.addEventListener('click', function(){
+        apiActions.getRequest("https://localhost:44313/api/Artist",
+        albums => {
+            console.log(albums);
+            app.innerHTML = ViewAlbums(albums);
         })
     })
 }
