@@ -6,6 +6,7 @@ import ViewAlbums from './components/ViewAlbums';
 import AboutUs from './components/AboutUs';
 import apiActions from './api/apiActions';
 import EditArtist from './components/EditArtist';
+import ViewSongs from './components/ViewSongs';
 
 
 
@@ -16,7 +17,6 @@ function pageBuild(){
     homepage()
     footer()
     viewArtists()
-    viewAlbums()
     aboutUs()
 }
 
@@ -163,21 +163,24 @@ function viewArtists() {
             )
         }
     })
+    app.addEventListener('click', function(){
+        if(event.target.classList.contains('album__name')){
+            const albumId = event.target.parentElement.querySelector(".album__id").value
+            console.log(albumId)
+            apiActions.getRequest(
+                `https://localhost:44313/api/Album/${albumId}`,
+                album => {
+                    console.log(album);
+                    app.innerHTML = ViewSongs(album);
+                }
+            )
+        }
+    })
 }
 
 function aboutUs() {
     const aboutUs = document.querySelector('#about-us')
     aboutUs.addEventListener('click', function(){
         document.querySelector('#app').innerHTML = AboutUs()
-    })
-}
-
-function viewAlbums() {
-    ourMusic.addEventListener('click', function(){
-        apiActions.getRequest("https://localhost:44313/api/Artist",
-        albums => {
-            console.log(albums);
-            app.innerHTML = ViewAlbums(albums);
-        })
     })
 }
