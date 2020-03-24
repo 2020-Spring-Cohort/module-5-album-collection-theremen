@@ -39,7 +39,7 @@ namespace album_collection
             services.AddMvc();
             services.AddScoped<IRepository<Album>, AlbumRepository>();
             services.AddScoped<IRepository<Artist>, ArtistRepository>();
-            //services.AddScoped<IRepository<Songs>, SongsRepository>();
+            services.AddScoped<IRepository<Song>, SongRepository>();
 
             services.AddCors(options =>
             {

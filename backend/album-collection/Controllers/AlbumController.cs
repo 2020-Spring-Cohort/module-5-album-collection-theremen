@@ -44,14 +44,19 @@ namespace album_collection.Controllers
 
         // PUT: api/Album/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IEnumerable<Album> Put([FromBody] Album value)
         {
+            albumRepo.Update(value);
+            return albumRepo.GetAll();
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IEnumerable<Album> Delete(int id)
         {
+            var album = albumRepo.GetById(id);
+            albumRepo.Delete(album);
+            return albumRepo.GetAll();
         }
     }
 }

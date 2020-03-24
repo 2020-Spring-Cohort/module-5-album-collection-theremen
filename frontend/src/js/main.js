@@ -130,6 +130,49 @@ function viewArtists() {
     })
 
     app.addEventListener('click', function(){
+        if(event.target.classList.contains('add-album__submit')){
+            const title = event.target.parentElement.querySelector('.add-album__title').value;
+            const image = event.target.parentElement.querySelector('.add-album__image').value;
+            const recordLabel = event.target.parentElement.querySelector('.add-album__recordLabel').value;
+            const artistId = event.target.parentElement.querySelector('.album__artistid').value;
+            var requestBody = {
+                Title: title,
+                Image: image,
+                RecordLabel: recordLabel,
+                artistId: artistId
+            }
+            console.log(requestBody)
+            apiActions.postRequest(
+                "https://localhost:44313/api/Album",
+                requestBody,
+                albums => {
+                    apiActions.getRequest(
+                        `https://localhost:44313/api/Artist/${artistId}`,
+                        artist => {
+                            app.innerHTML = ViewAlbums(artist)
+                        }
+                    )  
+                   // app.innerHTML = ViewAlbums(albums)
+                }
+            ) 
+        }
+    })
+
+    app.addEventListener("click", function(){
+        if(event.target.classList.contains('edit-album__submit')){
+            const albumId = event.target.parentElement.querySelector('.album__id').value;
+            console.log(albumId);
+            apiActions.getRequest(
+                `https://localhost:44313/api/Album/${albumId}`,
+                albumEdit => {
+                    console.log(albumEdit);
+                    app.innerHTML = EditAlbum(albumEdit);
+                  }
+            )
+        }
+    })
+
+    app.addEventListener('click', function(){
         if(event.target.classList.contains('add-artist__submit')){
             const artistName = event.target.parentElement.querySelector('.add-artist__artistName').value;
             const artistImage = event.target.parentElement.querySelector('.add-artist__artistImage').value;
