@@ -211,11 +211,10 @@ function viewArtists() {
             }
             console.log(requestBody)
             apiActions.postRequest(
-                "https://localhost:44313/api/Artist",
+                "https://localhost:44313/api/Song",
                 requestBody,
-                artists => {
-                    console.log(songs);
-                    app.innerHTML = ViewSongs(artists)
+                songs => {
+                    app.innerHTML = ViewSongs(songs)
                 }
             ) 
         }
