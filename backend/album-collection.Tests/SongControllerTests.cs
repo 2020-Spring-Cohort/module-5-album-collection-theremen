@@ -60,5 +60,27 @@ namespace album_collection.Tests
             //assert
             Assert.Equal(secondSong, result);
         }
+
+        [Fact]
+        public void Post_Creates_New_Song()
+        {
+            // arrange
+            var newSong = new Song(1, "Sigh No More", "link.html", "3:30");
+            var songList = new List<Song>();
+
+            // Use When..Do to substitute for methods that don't return a value, like the Repository method Create()
+            // When() allows us to call the method on the substitute and pass an argument
+            // Do() allows us to pass a callback function that executes when the method is called
+            songMockRepo.When(t => t.Create(newSong))
+                .Do(t => songList.Add(newSong));
+
+            songMockRepo.GetAll().Returns(songList);
+
+            // act
+            var result = testController.Post(newSong);
+
+            // assert
+            Assert.Contains(newSong, result);
+        }
     }
 }
