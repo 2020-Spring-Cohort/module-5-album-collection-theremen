@@ -30,7 +30,7 @@ namespace album_collection.Tests
               new Album(2, "Test Album", "testalbum.jpg", "test")
             };
 
-            //artistList
+            //albumList
             albumMockRepo.GetAll().Returns(expectedAlbums);
 
             // act
@@ -39,6 +39,26 @@ namespace album_collection.Tests
 
             // assert
             Assert.Equal(2, countOfAlbums);
+        }
+
+        [Fact]
+        public void GetById_Should_Return_Chosen_Album()
+        {
+            //arrange
+            var id = 2;
+            var firstAlbum = new Album(1, "Sigh No More", "sighnomore.jpg", "Island Records");
+            var secondAlbum = new Album(2, "Test Album", "testalbum.jpg", "test");
+            var expectedAlbums = new List<Album>();
+            expectedAlbums.Add(firstAlbum);
+            expectedAlbums.Add(secondAlbum);
+
+            albumMockRepo.GetById(id).Returns(secondAlbum);
+
+            //act
+            var result = testController.Get(id);
+
+            //assert
+            Assert.Equal(secondAlbum, result);
         }
     }
 }

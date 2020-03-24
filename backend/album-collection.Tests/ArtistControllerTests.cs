@@ -42,7 +42,6 @@ namespace album_collection.Tests
         }
 
         [Fact]
-
         public void GetById_Should_Return_Chosen_Artist()
         {
             //arrange
