@@ -20,6 +20,7 @@ export default function ViewSongs(album) {
            <input class="add-song__songTitle" type="text" placeholder="Add a Song here">
            <input class="add-song__songLink" type="text" placeholder="Add a Song Link here">
             <input class="add-song__songDuration" type="text" placeholder="Add the Song Duration here">
+            <input class="add-song__albumId" type="hidden" value="${album.albumId}">
            <button class="add-song__submit">Add a Song</button>
         </section>
 

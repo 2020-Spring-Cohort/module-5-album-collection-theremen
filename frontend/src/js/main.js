@@ -204,17 +204,26 @@ function viewArtists() {
             const songTitle = event.target.parentElement.querySelector('.add-song__songTitle').value;
             const songLink = event.target.parentElement.querySelector('.add-song__songLink').value;
             const songDuration = event.target.parentElement.querySelector('.add-song__songDuration').value;
+            const albumId = event.target.parentElement.querySelector('.add-song__albumId').value;
             var requestBody = {
-                SongTitle: songTitle,
-                Links: songLink,
-                Duration: songDuration
+                songTitle: songTitle,
+                links: songLink,
+                duration: songDuration,
+                albumId: albumId
             }
-            console.log(requestBody)
             apiActions.postRequest(
                 "https://localhost:44313/api/Song",
                 requestBody,
                 songs => {
-                    app.innerHTML = ViewSongs(songs)
+                    //alert("post")
+                    //app.innerHTML = ViewSongs(album)
+                    apiActions.getRequest(
+                        `https://localhost:44313/api/Album/${albumId}`,
+                        album => {
+                            console.log(album);
+                            app.innerHTML = ViewSongs(album);
+                        }
+                    )
                 }
             ) 
         }
