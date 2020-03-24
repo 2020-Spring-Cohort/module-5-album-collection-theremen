@@ -1,12 +1,13 @@
 export default function ViewSongs(album) {
     return `
+    <h3>${album.title}</h3>
     <ul id="view-songs">
         ${album.songs.map(song => {
             return `
             <li class="song">
-                <div class="song__name">${song.songTitle}</div>
+                <h4 class="song__name">${song.songTitle}</h4>
                 ${song.links}
-                ${song.duration}
+               <div> ${song.duration}</div>
                 <button class="edit-song__submit">Edit</button>
                 <button class="delete-song__submit">Delete</button>
                 <input class="song__id" type="hidden" value="${song.songId}">
