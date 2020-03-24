@@ -130,6 +130,49 @@ function viewArtists() {
     })
 
     app.addEventListener('click', function(){
+        if(event.target.classList.contains('add-album__submit')){
+            const title = event.target.parentElement.querySelector('.add-album__title').value;
+            const image = event.target.parentElement.querySelector('.add-album__image').value;
+            const recordLabel = event.target.parentElement.querySelector('.add-album__recordLabel').value;
+            const artistId = event.target.parentElement.querySelector('.album__artistid').value;
+            var requestBody = {
+                Title: title,
+                Image: image,
+                RecordLabel: recordLabel,
+                artistId: artistId
+            }
+            console.log(requestBody)
+            apiActions.postRequest(
+                "https://localhost:44313/api/Album",
+                requestBody,
+                albums => {
+                    apiActions.getRequest(
+                        `https://localhost:44313/api/Artist/${artistId}`,
+                        artist => {
+                            app.innerHTML = ViewAlbums(artist)
+                        }
+                    )  
+                   // app.innerHTML = ViewAlbums(albums)
+                }
+            ) 
+        }
+    })
+
+    app.addEventListener("click", function(){
+        if(event.target.classList.contains('edit-album__submit')){
+            const albumId = event.target.parentElement.querySelector('.album__id').value;
+            console.log(albumId);
+            apiActions.getRequest(
+                `https://localhost:44313/api/Album/${albumId}`,
+                albumEdit => {
+                    console.log(albumEdit);
+                    app.innerHTML = EditAlbum(albumEdit);
+                  }
+            )
+        }
+    })
+
+    app.addEventListener('click', function(){
         if(event.target.classList.contains('add-artist__submit')){
             const artistName = event.target.parentElement.querySelector('.add-artist__artistName').value;
             const artistImage = event.target.parentElement.querySelector('.add-artist__artistImage').value;
@@ -199,7 +242,37 @@ function viewArtists() {
             )
         }
     }) */
+    app.addEventListener('click', function(){
+        if(event.target.classList.contains('add-song__submit')){
+            const songTitle = event.target.parentElement.querySelector('.add-song__songTitle').value;
+            const songLink = event.target.parentElement.querySelector('.add-song__songLink').value;
+            const songDuration = event.target.parentElement.querySelector('.add-song__songDuration').value;
+            const albumId = event.target.parentElement.querySelector('.add-song__albumId').value;
+            var requestBody = {
+                songTitle: songTitle,
+                links: songLink,
+                duration: songDuration,
+                albumId: albumId
+            }
+            apiActions.postRequest(
+                "https://localhost:44313/api/Song",
+                requestBody,
+                songs => {
+                    //alert("post")
+                    //app.innerHTML = ViewSongs(album)
+                    apiActions.getRequest(
+                        `https://localhost:44313/api/Album/${albumId}`,
+                        album => {
+                            console.log(album);
+                            app.innerHTML = ViewSongs(album);
+                        }
+                    )
+                }
+            ) 
+        }
+    })
 }
+
 
 function aboutUs() {
     const aboutUs = document.querySelector('#about-us')
