@@ -19,6 +19,7 @@ namespace album_collection.Tests
             artistMockRepo = Substitute.For<IRepository<Artist>>();
             testController = new ArtistController(artistMockRepo);
         }
+
         [Fact]
         public void Get_Returns_Count_Of_Artists()
         {
@@ -28,15 +29,16 @@ namespace album_collection.Tests
               new Artist(1, "Mumford & Sons", "mumfordandsons.jpg", "London"),
               new Artist(2, "Test Artist", "testartist.jpg", "test")
             };
+
             //artistList
             artistMockRepo.GetAll().Returns(expectedArtists);
+
             // act
             var result = testController.Get();
             var countOfArtists = result.Count();
 
             // assert
             Assert.Equal(2, countOfArtists);
-
         }
 
         [Fact]
@@ -52,14 +54,12 @@ namespace album_collection.Tests
             expectedArtists.Add(secondArtist);
 
             artistMockRepo.GetById(id).Returns(secondArtist);
-            //act
 
+            //act
             var result = testController.Get(id);
 
             //assert
-
             Assert.Equal(secondArtist, result);
-
         }
 
         [Fact]
