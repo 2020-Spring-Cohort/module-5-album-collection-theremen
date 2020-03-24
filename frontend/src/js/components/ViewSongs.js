@@ -15,5 +15,14 @@ export default function ViewSongs(album) {
             `
         }).join("")}
     </ul>
-    <button class="view-albums">Go Back</button>`
+
+    <section class="add-song">
+           <input class="add-song__songTitle" type="text" placeholder="Add a Song here">
+           <input class="add-song__songLink" type="text" placeholder="Add a Song Link here">
+            <input class="add-song__songDuration" type="text" placeholder="Add the Song Duration here">
+           <button class="add-song__submit">Add a Song</button>
+        </section>
+
+    <button class="view-albums">Go Back</button>
+    `
 }

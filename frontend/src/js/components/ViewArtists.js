@@ -19,10 +19,10 @@ export default function ViewArtists(artists) {
     </ul>
 
     <section class="add-artist">
-           <p> <input class="add-artist__artistName" type="text" placeholder="Add an Artist here"></p>
-           <p> <input class="add-artist__artistImage" type="text" placeholder="Add the Artist Image here"></p>
+           <input class="add-artist__artistName" type="text" placeholder="Add an Artist here">
+           <input class="add-artist__artistImage" type="text" placeholder="Add the Artist Image here">
             <input class="add-artist__artistHometown" type="text" placeholder="Add the Artist Hometown here">
-           <p> <button class="add-artist__submit">Add an Artist</button></p>
+           <button class="add-artist__submit">Add an Artist</button>
         </section>
     `
 }

@@ -199,7 +199,29 @@ function viewArtists() {
             )
         }
     }) */
+    app.addEventListener('click', function(){
+        if(event.target.classList.contains('add-song__submit')){
+            const songTitle = event.target.parentElement.querySelector('.add-song__songTitle').value;
+            const songLink = event.target.parentElement.querySelector('.add-song__songLink').value;
+            const songDuration = event.target.parentElement.querySelector('.add-song__songDuration').value;
+            var requestBody = {
+                SongTitle: songTitle,
+                Links: songLink,
+                Duration: songDuration
+            }
+            console.log(requestBody)
+            apiActions.postRequest(
+                "https://localhost:44313/api/Artist",
+                requestBody,
+                artists => {
+                    console.log(songs);
+                    app.innerHTML = ViewSongs(artists)
+                }
+            ) 
+        }
+    })
 }
+
 
 function aboutUs() {
     const aboutUs = document.querySelector('#about-us')
