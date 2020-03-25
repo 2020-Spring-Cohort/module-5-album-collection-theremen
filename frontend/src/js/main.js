@@ -7,6 +7,7 @@ import AboutUs from './components/AboutUs';
 import apiActions from './api/apiActions';
 import EditArtist from './components/EditArtist';
 import ViewSongs from './components/ViewSongs';
+import EditSong from './components/EditSong';
 
 
 
@@ -230,18 +231,54 @@ function viewArtists() {
             )
         }
     })
-    /* app.addEventListener('click', function(){
-        if(event.target.classList.contains('view-albums')){
-            const songId = event.target.parentElement.querySelector(".song__id").value
+
+    app.addEventListener("click", function(){
+        if(event.target.classList.contains('edit-song__submit')){
+            const songId = event.target.parentElement.querySelector('.song__id').value;
+            console.log(songId);
             apiActions.getRequest(
                 `https://localhost:44313/api/Song/${songId}`,
-                songs => {
-                    console.log(songs);
-                    app.innerHTML = ViewAlbums(songs);
+                songEdit => {
+                    console.log(songEdit);
+                    app.innerHTML = EditSong(songEdit);
                 }
             )
         }
-    }) */
+    })
+
+    app.addEventListener('click', function(){
+        if(event.target.classList.contains('update-song__submit')){
+            const songId = event.target.parentElement.querySelector('.update-song__id').value;
+            const songTitle = event.target.parentElement.querySelector('.update-song__title').value
+            const songLink = event.target.parentElement.querySelector('.update-song__link').value
+            const songDuration = event.target.parentElement.querySelector('.update-song__duration').value
+            const albumId = event.target.parentElement.querySelector('.update-song__albumId').value
+
+            const songData = {
+                songId: songId,
+                songTitle: songTitle,
+                links: songLink,
+                duration: songDuration,
+                albumId: albumId
+            };
+            console.log(songData)
+
+            apiActions.putRequest(
+                `https://localhost:44313/api/Song/${songId}`,
+                songData,
+                songs => {
+                    apiActions.getRequest(
+                        `https://localhost:44313/api/Album/${albumId}`,
+                        album => {
+                            console.log(album);
+                            app.innerHTML = ViewSongs(album);
+                        }
+                    )
+                }
+            )
+        }
+    })
+    
     app.addEventListener('click', function(){
         if(event.target.classList.contains('add-song__submit')){
             const songTitle = event.target.parentElement.querySelector('.add-song__songTitle').value;
