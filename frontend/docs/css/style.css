@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body{
     color:black;
     background: #ED213A;  /* fallback for old browsers */
@@ -5,6 +11,16 @@ body{
     background: linear-gradient(to right, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     font-family: 'Bellota', cursive;
 }
+
+header, footer, h3 {
+    text-align: center;
+}
+
+#app {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
 #headercomponent {
     background-image: url("/images/background.jpg");
     height: 280px;
@@ -24,3 +40,42 @@ body{
     margin: 1em;
     background-color: white;
 }
+
+.artist img{
+    height: 100px;
+    width: 150px;
+} 
+
+.album img{
+    height: 100px;
+    width: 100px;
+}
+
+.artist {
+    margin-bottom: 1.618em;
+}
+
+button {
+    background-color: #282F44;
+    color: white;
+    border-radius: 8px;
+    border: 1px solid white;
+    padding: .3em;
+}
+
+button:hover {
+    background-color: white;
+    color: #282F44;
+    border-radius: 8px;
+    border: 1px solid #282F44;
+    padding: .3em;
+}
+
+.add-artist, .add-album, .add-song {
+    display: flex;
+    flex-direction: column;
+    background:none;  
+    max-width: 300px;
+    text-align: center;
+}
+

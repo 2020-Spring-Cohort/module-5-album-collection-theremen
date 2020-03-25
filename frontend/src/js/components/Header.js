@@ -9,5 +9,5 @@ export default function Header() {
             <div id="about-us">About Us</div>
         </div>
     </nav>
-    <h1 id="title">Music Page Title</h1>`
+    <h1 id="title">Scoot ‘n’ Sip Music Collection</h1>`
 }

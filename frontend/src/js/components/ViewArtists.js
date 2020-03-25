@@ -7,12 +7,14 @@ export default function ViewArtists(artists) {
         ${artists.map(artist => {
             return `
             <li class="artist">
+                <div>
                 <h4 class="artist__name">${artist.name}</h4>
                 <img src="./images/${artist.image}" alt="${artist.image}"></img>
                 <div>${artist.hometown}</div>
                 <button class="edit-artist__submit">Edit</button>
                 <button class="delete-artist__submit">Delete</button>
                 <input class="artist__id" type="hidden" value="${artist.artistId}">
+                </div>
             </li>
             `
         }).join("")}
