@@ -11,6 +11,7 @@ export default function ViewSongs(album) {
                 <button class="edit-song__submit">Edit</button>
                 <button class="delete-song__submit">Delete</button>
                 <input class="song__id" type="hidden" value="${song.songId}">
+                <input class="song__albumId" type="hidden" value="${song.albumId}">
             </li>
             `
         }).join("")}

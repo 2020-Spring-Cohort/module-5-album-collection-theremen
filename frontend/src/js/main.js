@@ -119,12 +119,19 @@ function viewArtists() {
     app.addEventListener("click", function(){
         if(event.target.classList.contains('delete-song__submit')){
             const songId = event.target.parentElement.querySelector('.song__id').value;
+            const albumId = event.target.parentElement.querySelector('.song__albumId').value;
             console.log(songId);
     
             apiActions.deleteRequest(
                 `https://localhost:44313/api/Song/${songId}`,
                 songs => {
-                    app.innerHTML = ViewSongs(songs);
+                    apiActions.getRequest(
+                        `https://localhost:44313/api/Album/${albumId}`,
+                        album => {
+                            console.log(album);
+                            app.innerHTML = ViewSongs(album);
+                        }
+                    )
                 }
             )
         }
