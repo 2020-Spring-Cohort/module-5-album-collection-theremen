@@ -6,7 +6,7 @@ export default function ViewAlbums(artist) {
             return `
             <li class="album">
                 <h4 class="album__name">${album.title}</h4>
-                <div>${album.image}</div>
+                <img src="./images/${album.image}" alt="${album.image}"></img>
                 <div>${album.recordLabel}</div>
                 <button class="edit-album__submit">Edit</button>
                 <button class="delete-album__submit">Delete</button>

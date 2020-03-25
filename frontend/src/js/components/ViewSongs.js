@@ -1,7 +1,7 @@
 export default function ViewSongs(album) {
     return `
     <h3>${album.title}</h3>
-    <ul id="view-songs">
+    <ol id="view-songs">
         ${album.songs.map(song => {
             return `
             <li class="song">
@@ -15,7 +15,7 @@ export default function ViewSongs(album) {
             </li>
             `
         }).join("")}
-    </ul>
+    </ol>
 
     <section class="add-song">
            <input class="add-song__songTitle" type="text" placeholder="Add a Song here">
