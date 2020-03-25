@@ -40,7 +40,7 @@ namespace album_collection.Models
                 {
                     ArtistId = 2,
                     Name = "Lacuna Coil",
-                    Image = "lacunacoil.jpg",
+                    Image = "lacuna_band.jpg",
                     Hometown = "Milan, Italy",
                 }
             );
@@ -49,7 +49,7 @@ namespace album_collection.Models
                 {
                     AlbumId = 1,
                     Title = "Sigh No More",
-                    Image = "sighnomore.jpg",
+                    Image = "Mumfordsonssighnomore.jpg",
                     RecordLabel = "Island Records",
                     ArtistId = 1
                 },
@@ -57,7 +57,7 @@ namespace album_collection.Models
                 {
                     AlbumId = 2,
                     Title = "Babel",
-                    Image = "babel.jpg",
+                    Image = "Babelcoverart.jpg",
                     RecordLabel = "Island Records",
                     ArtistId = 1
                 },
@@ -65,7 +65,7 @@ namespace album_collection.Models
                 {
                     AlbumId = 3,
                     Title = "Unleashed Memories",
-                    Image = "unleashedmemories.jpg",
+                    Image = "lacuna_unleashed_album.jpg",
                     RecordLabel = "Century Media",
                     ArtistId = 2
                 },
@@ -73,7 +73,7 @@ namespace album_collection.Models
                 {
                     AlbumId = 4,
                     Title = "Comalies",
-                    Image = "comalies.jpg",
+                    Image = "lacuna_coma_album.jpg",
                     RecordLabel = "Century Media",
                     ArtistId = 2
                 }
@@ -84,7 +84,7 @@ namespace album_collection.Models
                 {
                     SongId = 1,
                     SongTitle = "Sigh No More",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=4WJyAYhCt1s",
                     Duration = "3:30",
                     AlbumId = 1
                 },
@@ -92,7 +92,7 @@ namespace album_collection.Models
                 {
                     SongId = 2,
                     SongTitle = "The Cave",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=fNy8llTLvuA",
                     Duration = "3:37",
                     AlbumId = 1
                 },
@@ -100,7 +100,7 @@ namespace album_collection.Models
                 {
                     SongId = 3,
                     SongTitle = "Winter Winds",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=_KCg_QEHtkY",
                     Duration = "3:39",
                     AlbumId = 1
                 },
@@ -108,7 +108,7 @@ namespace album_collection.Models
                 {
                     SongId = 4,
                     SongTitle = "Roll Away Your Stone",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=TFUoyz5l4aM",
                     Duration = "4:23",
                     AlbumId = 1
                 },
@@ -116,7 +116,7 @@ namespace album_collection.Models
                 {
                     SongId = 5,
                     SongTitle = "White Blank Page",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=ZTqgeUkPO0A",
                     Duration = "4:14",
                     AlbumId = 1
                 },
@@ -124,7 +124,7 @@ namespace album_collection.Models
                 {
                     SongId = 6,
                     SongTitle = "I Gave You All",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=4NouN_IxvM8",
                     Duration = "4:18",
                     AlbumId = 1
                 },
@@ -132,7 +132,7 @@ namespace album_collection.Models
                 {
                     SongId = 7,
                     SongTitle = "Little Lion Man",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=am3WKqVX6D8",
                     Duration = "4:05",
                     AlbumId = 1
                 },
@@ -140,7 +140,7 @@ namespace album_collection.Models
                 {
                     SongId = 8,
                     SongTitle = "Timshel",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=pSPy59xNtTU",
                     Duration = "2:54",
                     AlbumId = 1
                 },
@@ -148,7 +148,7 @@ namespace album_collection.Models
                 {
                     SongId = 9,
                     SongTitle = "Thistle & Weeds",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=pxScXFVZHH8",
                     Duration = "4:50",
                     AlbumId = 1
                 },
@@ -156,7 +156,7 @@ namespace album_collection.Models
                 {
                     SongId = 10,
                     SongTitle = "Awake My Soul",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=DFQVtIiRDuA",
                     Duration = "4:13",
                     AlbumId = 1
                 },
@@ -164,7 +164,7 @@ namespace album_collection.Models
                 {
                     SongId = 11,
                     SongTitle = "Dust Bowl Dance",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=sPSYuxVyf7E",
                     Duration = "4:40",
                     AlbumId = 1
                 },
@@ -172,7 +172,7 @@ namespace album_collection.Models
                 {
                     SongId = 12,
                     SongTitle = "After the Storm",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=3jNILCzQurM",
                     Duration = "4:11",
                     AlbumId = 1
                 },
@@ -182,7 +182,7 @@ namespace album_collection.Models
                 {
                     SongId = 13,
                     SongTitle = "Babel",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=iWza_On7ajs",
                     Duration = "3:29",
                     AlbumId = 2
                 },
@@ -190,7 +190,7 @@ namespace album_collection.Models
                 {
                     SongId = 14,
                     SongTitle = "Whispers in the Dark",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=zNaM-N1NdGo",
                     Duration = "3:16",
                     AlbumId = 2
                 },
@@ -198,7 +198,7 @@ namespace album_collection.Models
                 {
                     SongId = 15,
                     SongTitle = "I Will Wait",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=rGKfrgqWcv0",
                     Duration = "4:37",
                     AlbumId = 2
                 },
@@ -206,7 +206,7 @@ namespace album_collection.Models
                 {
                     SongId = 16,
                     SongTitle = "Holland Road",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=Yemeb524Kx4",
                     Duration = "4:13",
                     AlbumId = 2
                 },
@@ -214,7 +214,7 @@ namespace album_collection.Models
                 {
                     SongId = 17,
                     SongTitle = "Ghosts That We Knew",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=FM6EzfZQWEI",
                     Duration = "5:40",
                     AlbumId = 2
                 },
@@ -222,7 +222,7 @@ namespace album_collection.Models
                 {
                     SongId = 18,
                     SongTitle = "Lover of the Light",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=lR5GXgC2q2M",
                     Duration = "5:15",
                     AlbumId = 2
                 },
@@ -230,7 +230,7 @@ namespace album_collection.Models
                 {
                     SongId = 19,
                     SongTitle = "Lovers' Eyes",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=9yw2_HSj87s",
                     Duration = "5:21",
                     AlbumId = 2
                 },
@@ -238,7 +238,7 @@ namespace album_collection.Models
                 {
                     SongId = 20,
                     SongTitle = "Reminder",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=8KV98HB8o7o",
                     Duration = "2:05",
                     AlbumId = 2
                 },
@@ -246,7 +246,7 @@ namespace album_collection.Models
                 {
                     SongId = 21,
                     SongTitle = "Hopeless Wanderer",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=zushTvKC0PU",
                     Duration = "5:08",
                     AlbumId = 2
                 },
@@ -254,7 +254,7 @@ namespace album_collection.Models
                 {
                     SongId = 22,
                     SongTitle = "Broken Crown",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=mjqUXexR8Vo",
                     Duration = "4:16",
                     AlbumId = 2
                 },
@@ -262,7 +262,7 @@ namespace album_collection.Models
                 {
                     SongId = 23,
                     SongTitle = "Below My Feet",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=3Imwnc8Ad9M",
                     Duration = "4:52",
                     AlbumId = 2
                 },
@@ -270,7 +270,7 @@ namespace album_collection.Models
                 {
                     SongId = 24,
                     SongTitle = "Not With Haste",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=avT0Rj50130",
                     Duration = "4:09",
                     AlbumId = 2
                 },
@@ -280,7 +280,7 @@ namespace album_collection.Models
                 {
                     SongId = 25,
                     SongTitle = "Heir of a Dying Day",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=sCXkbBBG4f0",
                     Duration = "4:59",
                     AlbumId = 3
                 },
@@ -288,7 +288,7 @@ namespace album_collection.Models
                 {
                     SongId = 26,
                     SongTitle = "To Live Is to Hide",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=wD20Oze5NYw",
                     Duration = "4:34",
                     AlbumId = 3
                 },
@@ -296,7 +296,7 @@ namespace album_collection.Models
                 {
                     SongId = 27,
                     SongTitle = "Purify",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=tFfchptAI3w",
                     Duration = "4:36",
                     AlbumId = 3
                 },
@@ -304,7 +304,7 @@ namespace album_collection.Models
                 {
                     SongId = 28,
                     SongTitle = "Senzafine",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=zDi1FwihzlQ",
                     Duration = "3:53",
                     AlbumId = 3
                 },
@@ -312,7 +312,7 @@ namespace album_collection.Models
                 {
                     SongId = 29,
                     SongTitle = "When a Dead Man Walks",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=jFfEfpbH40E",
                     Duration = "5:54",
                     AlbumId = 3
                 },
@@ -320,7 +320,7 @@ namespace album_collection.Models
                 {
                     SongId = 30,
                     SongTitle = "1:19",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=8lfcPeHM73M",
                     Duration = "4:58",
                     AlbumId = 3
                 },
@@ -328,7 +328,7 @@ namespace album_collection.Models
                 {
                     SongId = 31,
                     SongTitle = "Cold Heritage",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=7oIjVK08_8Y",
                     Duration = "5:23",
                     AlbumId = 3
                 },
@@ -336,7 +336,7 @@ namespace album_collection.Models
                 {
                     SongId = 32,
                     SongTitle = "Distant Sun",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=lTyiPm4lJBc",
                     Duration = "5:29",
                     AlbumId = 3
                 },
@@ -344,7 +344,7 @@ namespace album_collection.Models
                 {
                     SongId = 33,
                     SongTitle = "A Current Obsession",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=2aQDWfnOLlE",
                     Duration = "5:20",
                     AlbumId = 3
                 },
@@ -352,7 +352,7 @@ namespace album_collection.Models
                 {
                     SongId = 34,
                     SongTitle = "Wave of Anguish",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=f_2EhXHf4bs",
                     Duration = "4:40",
                     AlbumId = 3
                 },
@@ -362,7 +362,7 @@ namespace album_collection.Models
                 {
                     SongId = 35,
                     SongTitle = "Swamped",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=nOuxOUYycoU",
                     Duration = "4:00",
                     AlbumId = 4
                 },
@@ -370,7 +370,7 @@ namespace album_collection.Models
                 {
                     SongId = 36,
                     SongTitle = "Heaven's a Lie",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=4wfRHPsRGkk",
                     Duration = "4:46",
                     AlbumId = 4
                 },
@@ -378,7 +378,7 @@ namespace album_collection.Models
                 {
                     SongId = 37,
                     SongTitle = "Daylight Dancer",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=EPo-0hJhOPo",
                     Duration = "3:50",
                     AlbumId = 4
                 },
@@ -386,7 +386,7 @@ namespace album_collection.Models
                 {
                     SongId = 38,
                     SongTitle = "Humane",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=IOvSNweknM0",
                     Duration = "4:12",
                     AlbumId = 4
                 },
@@ -394,7 +394,7 @@ namespace album_collection.Models
                 {
                     SongId = 39,
                     SongTitle = "Self Deception",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=UDcMYJU_K7E",
                     Duration = "3:31",
                     AlbumId = 4
                 },
@@ -402,7 +402,7 @@ namespace album_collection.Models
                 {
                     SongId = 40,
                     SongTitle = "Aeon",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=rpS0vVzPPLw",
                     Duration = "1:56",
                     AlbumId = 4
                 },
@@ -410,7 +410,7 @@ namespace album_collection.Models
                 {
                     SongId = 41,
                     SongTitle = "Tight Rope",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=mR-B5cjToL0",
                     Duration = "4:15",
                     AlbumId = 4
                 },
@@ -418,7 +418,7 @@ namespace album_collection.Models
                 {
                     SongId = 42,
                     SongTitle = "The Ghost Woman and the Hunter",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=Nw561NWK9Zg",
                     Duration = "4:09",
                     AlbumId = 4
                 },
@@ -426,7 +426,7 @@ namespace album_collection.Models
                 {
                     SongId = 43,
                     SongTitle = "Unspoken",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=3ixjeXLCAiA",
                     Duration = "3:37",
                     AlbumId = 4
                 },
@@ -434,7 +434,7 @@ namespace album_collection.Models
                 {
                     SongId = 44,
                     SongTitle = "Entwined",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=Nn2WzHcyn5I",
                     Duration = "3:59",
                     AlbumId = 4
                 },
@@ -442,7 +442,7 @@ namespace album_collection.Models
                 {
                     SongId = 45,
                     SongTitle = "The Prophet Said",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=YSXvlOPLk3c",
                     Duration = "4:32",
                     AlbumId = 4
                 },
@@ -450,7 +450,7 @@ namespace album_collection.Models
                 {
                     SongId = 46,
                     SongTitle = "Angel's Punishment",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=vCIJrEtjXfw",
                     Duration = "3:56",
                     AlbumId = 4
                 },
@@ -458,7 +458,7 @@ namespace album_collection.Models
                 {
                     SongId = 47,
                     SongTitle = "Comalies",
-                    Links = "link.html",
+                    Links = "https://www.youtube.com/watch?v=SzN1bHSkpQI",
                     Duration = "5:01",
                     AlbumId = 4
                 }
