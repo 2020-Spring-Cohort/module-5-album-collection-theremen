@@ -30,8 +30,8 @@ namespace album_collection.Migrations
                     Title = table.Column<string>(nullable: true),
                     Image = table.Column<string>(nullable: true),
                     RecordLabel = table.Column<string>(nullable: true),
-                    SongsSongId = table.Column<int>(nullable: true),
-                    SongTitle = table.Column<string>(nullable: true)
+                    SongsSongId = table.Column<int>(nullable: true)
+                  //  SongTitle = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -69,12 +69,12 @@ namespace album_collection.Migrations
 
             migrationBuilder.InsertData(
                 table: "Artists",
-                columns: new[] { "ArtistId", "AlbumId", "Hometown", "Image", "Name", "Title" },
+                columns: new[] { "ArtistId", "AlbumId", "Hometown", "Image", "Name" },
                 values: new object[] { 1, null, "London, UK", "mumfordsons.jpg", "Mumford & Sons", null });
 
             migrationBuilder.InsertData(
                 table: "Artists",
-                columns: new[] { "ArtistId", "AlbumId", "Hometown", "Image", "Name", "Title" },
+                columns: new[] { "ArtistId", "AlbumId", "Hometown", "Image", "Name" },
                 values: new object[] { 2, null, "Milan, Italy", "lacunacoil.jpg", "Lacuna Coil", null });
 
             migrationBuilder.CreateIndex(
