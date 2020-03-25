@@ -8,7 +8,7 @@ export default function ViewArtists(artists) {
             return `
             <li class="artist">
                 <h4 class="artist__name">${artist.name}</h4>
-                <img src="~/src/images/${artist.image}" alt="mumford"></img>
+                <img src="/images/${artist.image}" alt="mumford"></img>
                 <div>${artist.hometown}</div>
                 <button class="edit-artist__submit">Edit</button>
                 <button class="delete-artist__submit">Delete</button>
