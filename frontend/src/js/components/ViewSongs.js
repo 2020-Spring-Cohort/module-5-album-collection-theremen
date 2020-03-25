@@ -6,8 +6,9 @@ export default function ViewSongs(album) {
             return `
             <li class="song">
                 <h4 class="song__name">${song.songTitle}</h4>
-                ${song.links}
-               <div> ${song.duration}</div>
+                <div> ${song.duration}</div>
+                <a href="${song.links}" target="_blank">Link to Song</a>
+                </br>
                 <button class="edit-song__submit">Edit</button>
                 <button class="delete-song__submit">Delete</button>
                 <input class="song__id" type="hidden" value="${song.songId}">

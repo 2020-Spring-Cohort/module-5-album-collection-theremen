@@ -19,11 +19,12 @@ export default function ViewArtists(artists) {
             `
         }).join("")}
     </ul>
-
+        <h3>Add an artist by filling out the boxes below:</h3>
     <section class="add-artist">
            <input class="add-artist__artistName" type="text" placeholder="Add an Artist here">
            <input class="add-artist__artistImage" type="text" placeholder="Add the Artist Image here">
-            <input class="add-artist__artistHometown" type="text" placeholder="Add the Artist Hometown here">
+           <input class="add-artist__artistHometown" type="text" placeholder="Add the Artist Hometown here">
+            </br>
            <button class="add-artist__submit">Add an Artist</button>
         </section>
     `
