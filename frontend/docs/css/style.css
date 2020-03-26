@@ -23,7 +23,7 @@ header, footer, h3 {
 
 #headercomponent {
     background-image: url("/images/background.jpg");
-    height: 255px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -141,7 +141,7 @@ input{
     cursor: pointer;
 }
 .artist__name:hover, .album__name:hover {
-    color: #51513D;
+    color: rgb(228, 228, 195);
 }
 
 .song {
@@ -153,6 +153,6 @@ input{
     margin: 5px;
   }
 
-
+s
 
 
