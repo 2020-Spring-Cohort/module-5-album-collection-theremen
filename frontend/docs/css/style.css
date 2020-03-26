@@ -132,7 +132,8 @@ input{
 .artists, .artists2 {
     display: flex;
     flex-direction: row;
-    background:none;  
+    background:none;
+    justify-content: center;
 }
 
 .artist__name, .album__name {
