@@ -150,6 +150,7 @@ input{
     flex-direction:column;
     border-style: solid;
     border-color: black;
+    margin: 5px;
   }
 
 
