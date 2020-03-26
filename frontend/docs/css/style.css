@@ -68,7 +68,9 @@ header, footer, h3 {
 
 #view-artists, #view-albums, #view-songs{
     text-align: center;
-    list-style-type: none;
+    display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .artist, .album {
@@ -129,8 +131,9 @@ input{
     border-radius: 5px;
     box-shadow: 2px 1px 7px 0px;
 }
-.artists, .artists2 {
+.artist {
   display: flex;
+  flex-direction: row;
   justify-content: center;
 }
 
