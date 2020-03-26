@@ -130,10 +130,8 @@ input{
     box-shadow: 2px 1px 7px 0px;
 }
 .artists, .artists2 {
-    display: flex;
-    flex-direction: row;
-    background:none;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .artist__name, .album__name {
