@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    color:black;
+    background: #ED213A;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #93291E, #ED213A);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Bellota', cursive;
+}
+
+header, footer, h3 {
+    text-align: center;
+}
+
+#app {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+#headercomponent {
+    background-image: url("/images/background.jpg");
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#nav-items{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #51513D;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+#nav-items div{
+    padding: 1em;
+    border-color: black;
+    margin-right: 2px;
+}
+
+#nav-items div:hover{
+    background-color: #7F7F5F;
+}
+
+.artist img{
+    height: 100px;
+    width: 150px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+    box-shadow: 2px 1px 7px 0px;
+} 
+
+.album img{
+    height: 100px;
+    width: 100px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+    box-shadow: 2px 1px 7px 0px;
+}
+
+#view-artists, #view-albums, #view-songs{
+    text-align: center;
+    display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.artist, .album {
+    margin: 1.618em auto;
+}
+
+h4{
+    margin-bottom: .25em;
+}
+
+h3{
+    margin-top: 20px;
+}
+
+p{
+    margin: 1.618em 0;
+}
+
+a{
+    text-decoration: none;
+    color: #1B2021
+}
+
+a:hover{
+    color: white;
+}
+
+button {
+    background-color: #51513D;
+    color: white;
+    border-radius: 8px;
+    border: 1px solid white;
+    padding: .3em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7F7F5F;
+    color: black;
+    border-radius: 8px;
+    border: 1px solid #51513D;
+    padding: .3em;
+}
+
+input{
+    margin: 4px 0;
+}
+
+.add-artist, .add-album, .add-song {
+    margin: 1.618em auto;
+    display: flex;
+    flex-direction: column;
+    background: none;  
+    max-width: 300px;
+    text-align: center;
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+    box-shadow: 2px 1px 7px 0px;
+}
+.artist {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.artist__name, .album__name {
+    cursor: pointer;
+}
+.artist__name:hover, .album__name:hover {
+    color: rgb(228, 228, 195);
+}
+
+.song {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:column;
+    border-style: solid;
+    border-color: black;
+    margin: 5px;
+  }
+
+s
+
+

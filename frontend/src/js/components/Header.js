@@ -1,11 +1,13 @@
 export default function Header() {
     return `
+    <div id="headercomponent">
+    </div>
     <nav id="nav-header">
-        <ul id="nav-items">
-            <li id="home">Home</li>
-            <li id="our-music">Our Music</li>
-            <li id="about-us">About Us</li>
-        </ul>
+        <div id="nav-items">
+            <div id="home">Home</div>
+            <div id="our-music">Our Music</div>
+            <div id="about-us">About Us</div>
+        </div>
     </nav>
-    <h1 id="title">Music Page Title</h1>`
+    <h1 id="title">Scoot ‘n’ Sip Music Collection</h1>`
 }
