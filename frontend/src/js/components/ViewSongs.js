@@ -5,6 +5,7 @@ export default function ViewSongs(album) {
         ${album.songs.map(song => {
             return `
             <li class="song">
+            <div id="songs">
                 <h4 class="song__name">${song.songTitle}</h4>
                 <div> ${song.duration}</div>
                 <a href="${song.links}" target="_blank">Link to Song</a>
@@ -13,7 +14,8 @@ export default function ViewSongs(album) {
                 <button class="delete-song__submit">Delete</button>
                 <input class="song__id" type="hidden" value="${song.songId}">
                 <input class="song__albumId" type="hidden" value="${song.albumId}">
-            </li>
+           </div
+                </li>
             `
         }).join("")}
     </ol>

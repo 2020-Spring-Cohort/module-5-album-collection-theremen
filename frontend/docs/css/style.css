@@ -23,7 +23,7 @@ header, footer, h3 {
 
 #headercomponent {
     background-image: url("/images/background.jpg");
-    height: 280px;
+    height: 255px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -35,10 +35,13 @@ header, footer, h3 {
     justify-content: center;
     background-color: #51513D;
     border: 2px solid black;
+    cursor: pointer;
 }
 
 #nav-items div{
     padding: 1em;
+    border-color: black;
+    margin-right: 2px;
 }
 
 #nav-items div:hover{
@@ -48,11 +51,19 @@ header, footer, h3 {
 .artist img{
     height: 100px;
     width: 150px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+    box-shadow: 2px 1px 7px 0px;
 } 
 
 .album img{
     height: 100px;
     width: 100px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+    box-shadow: 2px 1px 7px 0px;
 }
 
 #view-artists, #view-albums, #view-songs{
@@ -91,6 +102,7 @@ button {
     border-radius: 8px;
     border: 1px solid white;
     padding: .3em;
+    cursor: pointer;
 }
 
 button:hover {
@@ -112,28 +124,30 @@ input{
     background: none;  
     max-width: 300px;
     text-align: center;
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+    box-shadow: 2px 1px 7px 0px;
 }
-.artists {
+.artists, .artists2 {
     display: flex;
     flex-direction: row;
     background:none;  
 }
-.artists2 {
+
+.artist__name, .album__name {
+    cursor: pointer;
+}
+.artist__name:hover, .album__name:hover {
+    color: #51513D;
+}
+
+.song {
     display: flex;
-    flex-direction: row;
-    background:none;  
-}
-.artist__name {
-    cursor: pointer;
-}
-.artist__name:hover {
-    color: #51513D;
-}
-.album__name {
-    cursor: pointer;
-}
-.album__name:hover {
-    color: #51513D;
-}
+    flex-wrap: wrap;
+    flex-direction:row;
+  }
+
+
 
 
