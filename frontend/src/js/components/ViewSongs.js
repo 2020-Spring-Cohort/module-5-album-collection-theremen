@@ -1,21 +1,24 @@
 export default function ViewSongs(album) {
     return `
     <h3>${album.title}</h3>
-    <ul id="view-songs">
+    <ol id="view-songs">
         ${album.songs.map(song => {
             return `
             <li class="song">
+            <div id="songs">
                 <h4 class="song__name">${song.songTitle}</h4>
-                ${song.links}
-               <div> ${song.duration}</div>
+                <div> ${song.duration}</div>
+                <a href="${song.links}" target="_blank">Link to Song</a>
+                </br>
                 <button class="edit-song__submit">Edit</button>
                 <button class="delete-song__submit">Delete</button>
                 <input class="song__id" type="hidden" value="${song.songId}">
                 <input class="song__albumId" type="hidden" value="${song.albumId}">
-            </li>
+           </div
+                </li>
             `
         }).join("")}
-    </ul>
+    </ol>
 
     <section class="add-song">
            <input class="add-song__songTitle" type="text" placeholder="Add a Song here">
