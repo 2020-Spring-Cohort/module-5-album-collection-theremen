@@ -1,7 +1,7 @@
 export default function ViewArtists(artists) {
     console.log(artists)
     return `
-    <h3 id="artisttitle">Artists</h3>
+   <div> <h3 id="artisttitle">Artists</h3> </div>
 
     <div id="view-artists">
         ${artists.map(artist => {

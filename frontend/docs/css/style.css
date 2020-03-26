@@ -82,7 +82,7 @@ h4{
 }
 
 h3{
-    margin-bottom: 1.618em;
+    margin-top: 20px;
 }
 
 p{
@@ -147,7 +147,9 @@ input{
 .song {
     display: flex;
     flex-wrap: wrap;
-    flex-direction:row;
+    flex-direction:column;
+    border-style: solid;
+    border-color: black;
   }
 
 
