@@ -113,3 +113,27 @@ input{
     max-width: 300px;
     text-align: center;
 }
+.artists {
+    display: flex;
+    flex-direction: row;
+    background:none;  
+}
+.artists2 {
+    display: flex;
+    flex-direction: row;
+    background:none;  
+}
+.artist__name {
+    cursor: pointer;
+}
+.artist__name:hover {
+    color: #51513D;
+}
+.album__name {
+    cursor: pointer;
+}
+.album__name:hover {
+    color: #51513D;
+}
+
+
